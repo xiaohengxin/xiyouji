@@ -1,0 +1,87 @@
+                                                                       编辑命令：s
+Ctrl + a  ：移到命令行首                                          Ctrl + e  ：移到命令行尾             
+Ctrl + u  ：从光标处删除至命令行首                          Ctrl + k  ：从光标处删除至命令行尾
+Ctrl + w ：从光标处删除至字首                                 Ctrl + d ：删除光标处的字符
+Ctrl + h ：删除光标前一个字符                                     ss     -nptl 
+uname  -r 查看Linux版本。                                        uname －a （Linux查看版本当前操作系统内核信息）    cat /etc/redhat-release（Linux查看版本当前操作系统发行版信息）
+ulimit  -n  临时系统修改文件数                                       ss     -nptl                   
+yum -y install ntp                           （date -s  新日期）  
+ntpdate ntp.aliyun.com    (ntpdate cn.pool.ntp.org)
+yum erase  软件名
+ls -i /etc/hosts    (查看inode)   
+df  -i      查看inode 详细信息  
+                                                                            测试磁盘读写性能！
+                                                          time dd if=/dev/zero of=/data/ddtest bs=1k count=10000000 conv=fdatasync
+                                                            time dd if=/data/ddtest of=/dev/null bs=1k count=10000000 status=progress
+                                                                 
+    /var/log/message   (系统日志)  
+  复制表结构    create table  xiaomengzi（新表）  like huilong（旧表）;
+
+ find /var/log  -size +200k -a  -size  -500k    | xargs -i   mv  {} /opt
+
+                                                                                  
+查看命令属于哪个软件
+    # yum provides rz 
+partprobe   /dev/sda1     (刷新磁盘分区) 
+esc . 上一条命令的最后一个参数
+	Ctrl+r 在历史命令中查找，输入关键字调出之前的命令 
+diff   文件  文件 1   查看2个文件差异
+tree -L 2 查看2层
+du -sh  统计文件大小     ll  -i   查看innode号
+ charset utf-8;  #设置字符集nginx
+host命令 2. nslookup命令 三、域名查找工具dig    （域名解析）
+md5sum   MD5算法常用来验证网络文件传输的完整性，防止文件被人篡改
+md5sum apache-tomcat-8.5.50.tar.gz
+cat /proc/version （Linux查看  当前操作系统版本信息）
+ cat /proc/meminfo       查看内存
+cat /etc/issue 或（ cat /etc/redhat-release） （Linux查看版本当前操作系统发行版信息）
+cat /proc/cpuinfo （Linux查看cpu相关信息，包括型号、主频、内核信息等）
+ getconf LONG_BIT （Linux查看版本多少位）
+lsb_release -a （CentOS 6.9版本需要安装lsb，CentOS 7.0以上直接可以使用，网上都说Linux都支持，我只验证过CentOS系统）
+ uname -a # 查看内核/操作系统/CPU信息
+ head -n 1 /etc/issue # 查看操作系统版本
+　　# cat /proc/cpuinfo # 查看CPU信息
+　　
+　# lspci -tv # 列出所有PCI设备
+　　# lsusb -tv # 列出所有USB设备
+　　# lsmod # 列出加载的内核模块
+　　# env # 查看环境变量
+# free -m # 查看内存使用量和交换区使用量      free -h
+　　# df -h # 查看各分区使用情况
+　　# du -sh <目录名> # 查看指定目录的大小
+　　# grep MemTotal /proc/meminfo # 查看内存总量
+　　# grep MemFree /proc/meminfo # 查看空闲内存量
+　　# uptime # 查看系统运行时间、用户数、负载
+　　# cat /proc/loadavg # 查看系统负载
+磁盘和分区
+# mount | column -t # 查看挂接的分区状态
+　　# fdisk -l # 查看所有分区
+　　# swapon -s # 查看所有交换分区
+　　# hdparm -i /dev/hda # 查看磁盘参数（仅适用于IDE设备）
+　　# dmesg | grep IDE # 查看启动时IDE设备检测状况
+网络
+# ifconfig # 查看所有网络接口的属性
+　　# iptables -L # 查看防火墙设置
+　　# route -n # 查看路由表
+　　# netstat -lntp # 查看所有监听端口
+　　# netstat -antp # 查看所有已经建立的连接
+　　# netstat -s # 查看网络统计信息
+用户
+# w # 查看活动用户
+　　# id <用户名> # 查看指定用户信息
+　　# last # 查看用户登录日志
+　　# cut -d: -f1 /etc/passwd # 查看系统所有用户
+　　# cut -d: -f1 /etc/group # 查看系统所有组
+　　# crontab -l # 查看当前用户的计划任务
+服务
+# chkconfig --list # 列出所有系统服务
+　　# chkconfig --list | grep on # 列出所有启动的系统服务
+程序
+# rpm -qa # 查看所有安装的软件包
+
+
+
+
+
+                                                                                                          课件知识
+
